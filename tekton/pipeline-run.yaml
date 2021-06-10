@@ -1,0 +1,13 @@
+
+apiVersion: tekton.dev/v1beta1
+kind: PipelineRun
+metadata:
+  generateName: zhang-xun-buildah-pr-assignment-
+spec:
+  pipelineRef:
+    name: zhang-xun-pipeline-builda-assignment
+  serviceAccountName: build-bot
+  workspaces:
+    - name: pipeline-shared-data
+      persistentVolumeClaim:
+        claimName: zhang-xun-live-pvc
